@@ -1,3 +1,76 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Custom callouts from Callout Manager
+.callout {
+  --callout-icon-link: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+  --callout-icon-lightbulb: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>');
+  --callout-icon-thumbs-down: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"></path><path d="M17 14V2"></path></svg>');
+  --callout-icon-quote: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>');
+  --callout-icon-thumbs-up: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"></path><path d="M7 10v12"></path></svg>');
+  --callout-icon-flask-conical: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path><path d="M6.453 15h11.094"></path><path d="M8.5 2h7"></path></svg>');
+  --callout-icon-book-marked: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v8l3-3 3 3V2"></path><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"></path></svg>');
+  --callout-icon-circle-help: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>');
+
+  &[data-callout="metadata"] {
+    --color: #a882ff;
+    --border: #a882ff44;
+    --bg: #a882ff10;
+    --callout-icon: var(--callout-icon-example);
+  }
+
+  &[data-callout="link"] {
+    --color: #448aff;
+    --border: #448aff44;
+    --bg: #448aff10;
+    --callout-icon: var(--callout-icon-link);
+  }
+
+  &[data-callout="synthesis"] {
+    --color: #e9973f;
+    --border: #e9973f44;
+    --bg: #e9973f10;
+    --callout-icon: var(--callout-icon-lightbulb);
+  }
+
+  &[data-callout="disagree"] {
+    --color: #fb464c;
+    --border: #fb464c44;
+    --bg: #fb464c10;
+    --callout-icon: var(--callout-icon-thumbs-down);
+  }
+
+  &[data-callout="claims"] {
+    --color: #d0b530;
+    --border: #d0b53044;
+    --bg: #d0b53010;
+    --callout-icon: var(--callout-icon-quote);
+  }
+
+  &[data-callout="agree"] {
+    --color: #44cf6e;
+    --border: #44cf6e44;
+    --bg: #44cf6e10;
+    --callout-icon: var(--callout-icon-thumbs-up);
+  }
+
+  &[data-callout="methods"] {
+    --color: #448aff;
+    --border: #448aff44;
+    --bg: #448aff10;
+    --callout-icon: var(--callout-icon-flask-conical);
+  }
+
+  &[data-callout="terms"] {
+    --color: #e9973f;
+    --border: #e9973f44;
+    --bg: #e9973f10;
+    --callout-icon: var(--callout-icon-book-marked);
+  }
+
+  &[data-callout="confusion"] {
+    --color: #e36ba7;
+    --border: #e36ba744;
+    --bg: #e36ba710;
+    --callout-icon: var(--callout-icon-circle-help);
+  }
+}
